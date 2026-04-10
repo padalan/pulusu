@@ -1,0 +1,19 @@
+# Pulusu.com — Setup Instructions
+
+## Manual Step: Add pulusu.com to Cloudflare
+
+The CF_API_TOKEN in Infisical doesn't have zone creation permission.
+Do this once in the Cloudflare dashboard:
+
+1. Log in to [dash.cloudflare.com](https://dash.cloudflare.com) as **Nikhil@zerocopy.systems**
+2. Click "Add a site" → enter `pulusu.com`
+3. Select **Free** plan
+4. Cloudflare will show 2 nameservers (e.g., `ada.ns.cloudflare.com`, `miles.ns.cloudflare.com`)
+5. Go to **Namecheap** → pulusu.com → Domain → Nameservers → "Custom DNS"
+6. Replace Namecheap nameservers with the 2 Cloudflare ones
+7. Back in Cloudflare, click "Check nameservers" — propagation takes 1-24 hours
+8. Once active, Cloudflare auto-provisions SSL
+
+## After DNS is active
+
+Email routing and Pages deployment are automated via CI.
