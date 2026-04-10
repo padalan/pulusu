@@ -16,4 +16,17 @@ Do this once in the Cloudflare dashboard:
 
 ## After DNS is active
 
-Email routing and Pages deployment are automated via CI.
+### Custom domain for Pages
+1. CF Dashboard → Pages → pulusu-site → Custom domains → Add `pulusu.com`
+2. Also add `www.pulusu.com` → redirect to pulusu.com
+
+### Email routing (hello@pulusu.com)
+1. CF Dashboard → pulusu.com → Email → Email Routing
+2. Enable Email Routing
+3. Add route: `hello@pulusu.com` → Forward to `Nikhil@zerocopy.systems`
+4. Verify the destination email if prompted
+
+### Analytics (Plausible)
+1. Sign up at [plausible.io](https://plausible.io) (or self-host)
+2. Add site: `pulusu.com`
+3. Script tag is already in the layout — no code changes needed
