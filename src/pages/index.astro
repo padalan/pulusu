@@ -1,0 +1,204 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Pulusu — Stop Getting Liquidated">
+  <main class="min-h-screen bg-[#0a0a0f] text-white font-sans selection:bg-amber-500/30">
+    <!-- Hero -->
+    <section class="max-w-3xl mx-auto px-6 pt-24 pb-16 text-center">
+      <div
+        class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-full px-4 py-1.5 text-amber-400 text-xs font-mono uppercase tracking-wider mb-8"
+      >
+        Launching Soon
+      </div>
+
+      <h1
+        class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight"
+      >
+        Stop Getting Liquidated.
+        <br />
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-500">
+          Start Trading Systematically.
+        </span>
+      </h1>
+
+      <p class="text-lg text-white/60 max-w-xl mx-auto leading-relaxed mb-10">
+        Real tools. Real losses. Real education. A trading community built by
+        someone who got liquidated 3 times before building a system that works.
+      </p>
+
+      <!-- Email Capture -->
+      <div class="max-w-md mx-auto">
+        <form id="waitlist-form" class="space-y-3">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+            class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-neutral-600 focus:border-amber-500/50 focus:outline-none transition-colors"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="you@email.com"
+            required
+            class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-neutral-600 focus:border-amber-500/50 focus:outline-none transition-colors"
+          />
+          <select
+            name="capital"
+            required
+            class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-sm text-neutral-400 focus:border-amber-500/50 focus:outline-none transition-colors appearance-none"
+          >
+            <option value="" disabled selected>How much trading capital?</option>
+            <option value="<5k">Less than $5K</option>
+            <option value="5k-10k">$5K - $10K</option>
+            <option value="10k-25k">$10K - $25K</option>
+            <option value="25k-50k">$25K - $50K</option>
+            <option value="50k+">$50K+</option>
+          </select>
+          <button
+            type="submit"
+            class="w-full bg-amber-500 text-black font-bold text-sm uppercase tracking-wide py-3.5 rounded-lg hover:bg-amber-400 transition-all hover:scale-[1.01] active:scale-[0.99]"
+          >
+            Join the Waitlist
+          </button>
+        </form>
+        <p class="text-xs text-white/40 mt-3">
+          Founding members get lifetime access at $1,500 (normally $2,500).
+          First 25 only.
+        </p>
+        <div
+          id="success-msg"
+          class="hidden mt-4 p-4 bg-green-500/10 border border-green-500/30 rounded-lg"
+        >
+          <p class="text-green-400 text-sm font-medium">
+            You're on the list. We'll email you when doors open.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="max-w-4xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold text-center mb-10">What Members Get</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {[
+          {
+            title: "Research & Signals",
+            desc: "Daily market briefs, trade ideas with entry/stop/target, backed by systematic analysis — not gut calls.",
+          },
+          {
+            title: "Education (6 Modules)",
+            desc: "Risk management, market structure, trading psychology, technical analysis, systematic trading, crypto-specific.",
+          },
+          {
+            title: "Trading Tools",
+            desc: "Risk calculator, confluence scanner, trade journal — built from real quant infrastructure, not toy spreadsheets.",
+          },
+          {
+            title: "Weekly Live Sessions",
+            desc: "Walk through trades, mistakes, market structure. Real-time analysis, real questions, no sales pitch.",
+          },
+        ].map((item) => (
+          <div class="bg-black/30 border border-white/10 rounded-xl p-6 hover:border-amber-500/20 transition-colors">
+            <h3 class="font-bold text-amber-400 mb-2">{item.title}</h3>
+            <p class="text-sm text-white/60 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="max-w-2xl mx-auto px-6 py-16 text-center">
+      <h2 class="text-2xl font-bold mb-8">Simple Pricing</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-black/30 border border-white/10 rounded-xl p-6">
+          <p class="text-xs text-white/60 uppercase tracking-wider font-mono mb-2">
+            Annual
+          </p>
+          <p class="text-3xl font-bold">
+            $1,500<span class="text-lg text-white/40">/yr</span>
+          </p>
+          <p class="text-sm text-white/60 mt-2">Cancel anytime. 90-day money-back guarantee.</p>
+        </div>
+        <div class="bg-amber-500/5 border border-amber-500/30 rounded-xl p-6 shadow-[0_0_20px_rgba(245,158,11,0.08)]">
+          <p class="text-xs text-amber-400 uppercase tracking-wider font-mono mb-2">
+            Lifetime
+          </p>
+          <p class="text-3xl font-bold text-amber-400">$2,500</p>
+          <p class="text-sm text-white/60 mt-2">
+            One-time. Everything, forever. Founding price: $1,500.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-2xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold text-center mb-10">FAQ</h2>
+      <div class="space-y-4">
+        {[
+          {
+            q: "Who is this for?",
+            a: "Retail and prosumer traders with $10K+ trading capital who are tired of getting liquidated and want a systematic approach. Not for complete beginners — you should know what a candlestick is.",
+          },
+          {
+            q: "What platform do you use?",
+            a: "Circle.so — a professional community platform with courses, events, and structured spaces. Not Discord, not Telegram.",
+          },
+          {
+            q: "Is this financial advice?",
+            a: "No. Pulusu is an educational community. We share research, tools, and analysis. All trading decisions are yours. We are not registered investment advisors.",
+          },
+          {
+            q: "What's the refund policy?",
+            a: "90-day money-back guarantee. Complete at least 2 modules and log 10 trades in the journal. If you haven't recovered your membership cost, full refund.",
+          },
+          {
+            q: "When does it launch?",
+            a: "Founding member beta in 4-6 weeks. Join the waitlist to get early access at $1,500 lifetime (first 25 only).",
+          },
+        ].map((item) => (
+          <div class="bg-black/30 border border-white/10 rounded-xl p-5">
+            <h3 class="font-semibold text-sm mb-2">{item.q}</h3>
+            <p class="text-sm text-white/60">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-3xl mx-auto px-6 py-12 text-center border-t border-white/5">
+      <p class="text-xs text-white/30">
+        Pulusu is an educational trading community. This is not financial advice.
+        Trading involves substantial risk of loss. Only trade with capital you can
+        afford to lose.
+      </p>
+      <p class="text-xs text-white/20 mt-2">
+        &copy; {new Date().getFullYear()} Pulusu. All rights reserved.
+      </p>
+    </footer>
+  </main>
+</Layout>
+
+<script>
+  const form = document.getElementById("waitlist-form") as HTMLFormElement;
+  const successMsg = document.getElementById("success-msg") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const payload = {
+      name: data.get("name"),
+      email: data.get("email"),
+      capital: data.get("capital"),
+      source: "landing-page",
+      ts: new Date().toISOString(),
+    };
+
+    // TODO(human): Wire to Supabase in Sprint 1. For now, log and show success.
+    console.log("Waitlist signup:", payload);
+    form.classList.add("hidden");
+    successMsg?.classList.remove("hidden");
+  });
+</script>
